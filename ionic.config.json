@@ -1,0 +1,7 @@
+{
+  "name": "fake-ecommerce-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

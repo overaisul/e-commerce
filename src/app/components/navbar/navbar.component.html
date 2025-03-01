@@ -1,0 +1,60 @@
+<div class="text-center bg-blue-500 p-3 font-bold">
+  <h1 class="text-white">Free shipping on orders $40+</h1>
+</div>
+<div class="bg-custom-blue p-6">
+  <div class="flex justify-between max-w-6xl mx-auto p-6">
+    <div>
+      <span class="material-symbols-outlined text-white"> search </span>
+    </div>
+    <div>
+      <div>
+        <h1 class="text-white">Refresh</h1>
+      </div>
+    </div>
+    <div>
+      <div class="relative hover:cursor-pointer" (click)="toggleCart($event)">
+        <span class="material-symbols-outlined text-white"> shopping_bag </span>
+        @if (itemcount > 0) {
+        <p
+          class="absolute top-[0.5rem] right-[-1rem] text-black border border-solid border-white px-2 rounded-full bg-white"
+        >
+          {{ itemcount }}
+        </p>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="text-gray-400 flex justify-center gap-5">
+    <p class="hover:text-white hover:underline hover:cursor-pointer">Home</p>
+    <p class="hover:text-white hover:underline hover:cursor-pointer">Body</p>
+    <p class="hover:text-white hover:underline hover:cursor-pointer">Face</p>
+    <p class="hover:text-white hover:underline hover:cursor-pointer">Kit</p>
+    <p
+      class="hover:text-white hover:underline hover:cursor-pointer"
+      (click)="toggleAbout($event)"
+    >
+      About @if (!isOpen) {
+      <span class="material-symbols-outlined text-gray-400 align-middle"
+        >keyboard_arrow_down</span
+      >
+      } @else if (isOpen) {
+      <span class="material-symbols-outlined text-gray-400 align-middle">
+        keyboard_arrow_up
+      </span>
+      }
+    </p>
+  </div>
+</div>
+@if (isOpen) {
+<div
+  class="bg-custom-blue absolute left-1/2 p-6 rounded-lg shadow-lg z-50 w-72"
+>
+  <div class="flex flex-col justify-center gap-5 text-gray-400">
+    <p class="hover:text-white hover:cursor-pointer">Our Story</p>
+    <p class="hover:text-white hover:cursor-pointer">Blog</p>
+    <p class="hover:text-white hover:cursor-pointer">Contact</p>
+  </div>
+</div>
+} @if(isCartOpen){
+<app-side-bar (closeSideBar)="closeCart()"></app-side-bar>
+}

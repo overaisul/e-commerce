@@ -1,0 +1,28 @@
+<h1 class="font-bold text-4xl text-center max-w-4xl mt-10 mb-6">
+  Meet the internet's favorite skincare.
+</h1>
+<div class="flex flex-wrap max-w-6xl justify-center mx-auto gap-4 mt-4">
+  @for (item of items; track item.id) {
+  <div
+    class="flex flex-col gap-5 bg-transparent border border-solid border-gray-500 text-black px-6 py-4 rounded-xl"
+  >
+    <img
+      [src]="item.image"
+      alt=""
+      class="w-56 h-60 hover:scale-105 transition-all duration-300 ease-in-out"
+    />
+    <h1
+      class="w-44 h-20 font-bold hover:text-gray-500 hover:underline hover:cursor-pointer"
+    >
+      {{ item.title }}
+    </h1>
+    <p class="text-gray-500">${{ item.price }}</p>
+    <button
+      (click)="addToCart(item)"
+      class="bg-transparent border border-solid border-gray-400 text-black px-4 py-2 rounded-full hover:border-black"
+    >
+      Add to cart
+    </button>
+  </div>
+  }
+</div>

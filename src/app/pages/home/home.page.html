@@ -1,0 +1,80 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="bg-page-color">
+    <app-navbar></app-navbar>
+    <app-hero-section></app-hero-section>
+    <app-item-cards></app-item-cards>
+    <div
+      class="flex flex-wrap md:flex-nowrap max-w-[60rem] mx-auto justify-center p-6 gap-10"
+    >
+      <app-companies
+        imageSrc="https://placehold.co/100x100"
+        para='"The formulas are sophisticated. They have an effortless quality to them."'
+      ></app-companies>
+      <app-companies
+        imageSrc="https://placehold.co/100x100"
+        para='"The formulas are sophisticated. They have an effortless quality to them."'
+      ></app-companies>
+      <app-companies
+        imageSrc="https://placehold.co/100x100"
+        para='"The formulas are sophisticated. They have an effortless quality to them."'
+      ></app-companies>
+      <app-companies
+        imageSrc="https://placehold.co/100x100"
+        para='"The formulas are sophisticated. They have an effortless quality to them."'
+      ></app-companies>
+    </div>
+
+    <div>
+      <app-showing-cards
+        imageSrc="https://placehold.co/800x600"
+        title="Shampoo"
+        para="Lather up with our newest shampoo for clean, strong, and healthy hair."
+        buttonText="Shop Shampoo"
+        className="flex max-w-[70rem] mx-auto justify-between gap-10 bg-white rounded-xl mb-10"
+        ImageClass="rounded-r-xl"
+      ></app-showing-cards>
+      <app-showing-cards
+        imageSrc="https://placehold.co/500x500"
+        title="Shampoo"
+        para="Lather up with our newest shampoo for clean, strong, and healthy hair. Lather up with our newest shampoo for clean, strong, and healthy hair."
+        buttonText="Shop Shampoo"
+        className="flex flex-row-reverse max-w-[70rem] max-h-[40rem] mx-auto justify-between gap-10 bg-white rounded-xl mb-10"
+        ImageClass="rounded-l-xl"
+      ></app-showing-cards>
+      <app-showing-cards
+        imageSrc="https://placehold.co/800x600"
+        title="Shampoo"
+        para="Lather up with our newest shampoo for clean, strong, and healthy hair."
+        buttonText="Shop Shampoo"
+        className="flex max-w-[70rem] mx-auto justify-between gap-10 bg-white rounded-xl mb-10"
+        ImageClass="rounded-r-xl"
+      ></app-showing-cards>
+      <app-showing-cards
+        imageSrc="https://placehold.co/500x500"
+        title="Shampoo"
+        para="Lather up with our newest shampoo for clean, strong, and healthy hair. Lather up with our newest shampoo for clean, strong, and healthy hair."
+        buttonText="Shop Shampoo"
+        className="flex flex-row-reverse max-w-[70rem] max-h-[40rem] mx-auto justify-between gap-10 bg-white rounded-xl"
+        ImageClass="rounded-l-xl"
+      ></app-showing-cards>
+    </div>
+    <div>
+      <app-company-banner></app-company-banner>
+    </div>
+    <div
+      class="flex flex-wrap max-w-6xl justify-center mx-auto gap-4 mt-4 mb-4"
+    >
+      <app-choose-cards></app-choose-cards>
+      <app-choose-cards></app-choose-cards>
+      <app-choose-cards></app-choose-cards>
+    </div>
+    <div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</ion-content>

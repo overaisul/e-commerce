@@ -1,0 +1,11 @@
+p {
+  cursor: pointer;
+}
+p:hover {
+  color: white;
+}
+.vertical-line {
+  width: 100%;
+  height: 0.1px;
+  background-color: rgb(44, 39, 39);
+}

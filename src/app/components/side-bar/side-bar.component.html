@@ -1,0 +1,78 @@
+@if (itemList.length > 0) {
+<div
+  class="fixed top-0 right-4 w-96 h-screen bg-page-color shadow-lg p-6 z-50 flex flex-col"
+>
+  <p
+    class="absolute top-6 right-4 text-3xl hover:cursor-pointer"
+    (click)="closeBar()"
+  >
+    X
+  </p>
+
+  <h1 class="font-bold text-3xl">Your cart</h1>
+
+  <div class="flex justify-between mt-6">
+    <p class="font-thin">PRODUCT</p>
+    <p class="font-thin">TOTAL</p>
+  </div>
+
+  <hr class="vertical-line m-4" />
+
+  <div class="overflow-y-auto flex-1 pr-2">
+    @for (item of itemList; track item.id) {
+    <div class="flex justify-between items-center gap-4 mt-6">
+      <div class="w-20">
+        <img [src]="item.image" alt="" class="w-full h-auto rounded-lg" />
+      </div>
+      <div class="flex-1">
+        <p class="font-bold text-sm truncate max-w-[120px]">{{ item.title }}</p>
+        <p class="font-thin text-sm">${{ item.price }}</p>
+
+        <!-- Quantity Controls -->
+        <div class="flex items-center gap-2 mt-2">
+          <p class="border border-gray-400 px-4 py-1 rounded-full text-center">
+            <button class="p-2" (click)="decreaseQuantity(item)">-</button>
+            {{ item.quantity }}
+            <button class="p-2" (click)="increaseQuantity(item)">+</button>
+          </p>
+          <span
+            class="material-symbols-outlined hover:cursor-pointer"
+            (click)="removeItem(item)"
+          >
+            delete
+          </span>
+        </div>
+      </div>
+      <div>
+        <p>$ {{ item.total }}</p>
+      </div>
+    </div>
+    }
+  </div>
+  <div>
+    <hr class="vertical-line m-4" />
+    <div class="flex justify-between mt-6 text-2xl">
+      <h1 class="font-bold">Subtotal</h1>
+      <p class="font-thin">{{ grandTotal | number : "1.2-2" }}</p>
+    </div>
+    <small class="font-thin">Taxes and shipping calculated at checkout</small>
+    <button
+      class="w-full px-4 py-3 text-white bg-blue-500 rounded-full hover:scale-105 transition-all duration-300 ease-in-out m-3"
+    >
+      Check Out
+    </button>
+  </div>
+</div>
+} @else {
+<div
+  class="fixed top-0 right-4 w-96 h-screen bg-page-color shadow-lg p-6 z-50 flex flex-col flex flex-col items-center justify-center"
+>
+  <h1 class="font-bold text-3xl">Your cart is empty</h1>
+  <button
+    class="w-full px-4 py-3 text-white bg-blue-500 rounded-full hover:scale-105 transition-all duration-300 ease-in-out m-3"
+    (click)="closeBar()"
+  >
+    Continue Shopping
+  </button>
+</div>
+}
