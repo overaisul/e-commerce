@@ -15,4 +15,8 @@ export class HttpServiceService {
   getAllProducts(): Observable<Item[]> {
     return this.http.get<Item[]>(BASE_URL);
   }
+
+  getOneProduct(id: number): Observable<Item> {
+    return this.http.get<Item>(`${BASE_URL}/${id}`);
+  }
 }

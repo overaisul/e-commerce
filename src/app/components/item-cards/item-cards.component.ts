@@ -1,4 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Item } from 'src/app/model/item';
 import { CartServiceService } from 'src/app/services/cart-service.service';
 import { HttpServiceService } from 'src/app/services/http-service.service';
@@ -7,13 +8,13 @@ import { HttpServiceService } from 'src/app/services/http-service.service';
   selector: 'app-item-cards',
   templateUrl: './item-cards.component.html',
   styleUrls: ['./item-cards.component.scss'],
+  imports: [RouterModule],
 })
 export class ItemCardsComponent {
   private httpService = inject(HttpServiceService);
   private cardItemService = inject(CartServiceService);
   public items: Item[] = [];
   constructor() {}
-
   ngOnInit() {
     this.httpService
       .getAllProducts()

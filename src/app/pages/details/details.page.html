@@ -1,0 +1,111 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="bg-page-color">
+    <app-navbar></app-navbar>
+    <div
+      class="flex flex-wrap md:flex-nowrap max-w-6xl justify-between mx-auto gap-1 m-10"
+    >
+      <div>
+        <img
+          [src]="itemDetails.image"
+          alt=""
+          class="w-[35rem] h-[30rem] border border-solid bg-white p-10 rounded-xl"
+        />
+      </div>
+      <div class="flex flex-col justify-between">
+        <h1 class="font-bold text-3xl mt-4 w-72">{{ itemDetails.title }}</h1>
+
+        <p class="text-gray-400 mt-4">${{ itemDetails.price }}</p>
+        <div class="flex flex-col">
+          <button
+            class="w-full px-4 py-3 text-black bg-transperent border border-solid border-black rounded-full hover:scale-105 transition-all duration-300 ease-in-out m-3"
+            (click)="addTocart(itemDetails)"
+          >
+            Add to cart
+          </button>
+          <button
+            class="w-full px-4 py-3 text-white bg-blue-500 rounded-full hover:scale-105 transition-all duration-300 ease-in-out m-3"
+          >
+            Buy it Now
+          </button>
+        </div>
+        <p class="text-gray-400 mt-4 w-[30rem]">
+          {{ itemDetails.description }}
+        </p>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Let's get into the nitty gritty details.
+      </h1>
+
+      <div class="border-b border-gray-300 pb-4">
+        <button
+          class="flex items-center w-full text-left text-lg font-semibold text-gray-900"
+        >
+          Highlights
+          <span class="ml-auto">^</span>
+        </button>
+        <ul class="text-gray-600 mt-2 space-y-1">
+          <li>
+            • Gel-cream texture feels fresh and cool as it instantly soothes and
+            hydrates.
+          </li>
+          <li>• Super moisturizers smooth fine lines and lock in soft skin.</li>
+          <li>
+            • Protects against environmental pollution as it leaves skin
+            shine-free.
+          </li>
+          <li>
+            • No parabens, sulfates, phthalates, silicones or aluminum. Vegan,
+            cruelty-free.
+          </li>
+        </ul>
+      </div>
+      <div class="border-b border-gray-300 py-4">
+        <button
+          class="flex items-center w-full text-left text-lg font-semibold text-gray-900"
+        >
+          Scent
+          <span class="ml-auto">></span>
+        </button>
+      </div>
+
+      <div class="border-b border-gray-300 py-4">
+        <button
+          class="flex items-center w-full text-left text-lg font-semibold text-gray-900"
+        >
+          Details
+          <span class="ml-auto">></span>
+        </button>
+      </div>
+
+      <div class="py-4">
+        <button
+          class="flex items-center w-full text-left text-lg font-semibold text-gray-900"
+        >
+          Ingredients
+          <span class="ml-auto">></span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <app-company-banner></app-company-banner>
+    </div>
+    <div
+      class="flex flex-wrap max-w-6xl justify-center mx-auto gap-4 mt-4 mb-4"
+    >
+      <app-choose-cards></app-choose-cards>
+      <app-choose-cards></app-choose-cards>
+      <app-choose-cards></app-choose-cards>
+    </div>
+    <div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</ion-content>
