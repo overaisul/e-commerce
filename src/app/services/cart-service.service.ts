@@ -18,7 +18,17 @@ export class CartServiceService {
     this.productList.next(items);
   }
   addToCart(item: Item) {
-    this.cartItems.push(item);
+    const existingItem = this.cartItems.find(
+      (cartItem: any) => cartItem.id === item.id
+    );
+
+    if (existingItem) {
+      existingItem.quantity += 1;
+      existingItem.total = existingItem.quantity * existingItem.price;
+    } else {
+      this.cartItems.push({ ...item, quantity: 1 });
+    }
+
     this.productList.next(this.cartItems);
     this.getTotalPrice();
     console.log(this.cartItems);
